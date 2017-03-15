@@ -1,0 +1,131 @@
+// -------------------------------------------------
+//    Nav scss
+// -------------------------------------------------
+
+nav {
+  height: 100px;
+  padding-left: $two-36th;
+  padding-right: $two-36th;
+
+  @media #{$md-breakpoint} {
+    padding-left: $one-36th;
+    padding-right: $one-36th;
+  }
+
+  &.is-closed {
+    @extend %gradient;
+    height: 100px;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .logo,
+  #menuToggle {
+    @extend %v-align;
+    cursor: pointer;
+    height: 64px;
+    margin: auto 0 auto auto;
+    opacity: 1;
+    width: auto;
+  }
+
+  .logo {
+    float: left;
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    div {
+      @extend %v-align;
+      float: left;
+    }
+  }
+
+  #menuToggle {
+    float: right;
+
+    div {
+      float: left;
+      //height: 40px;
+      margin-right: 12px;
+    }
+
+    img {
+      float: left;
+    }
+
+    div,
+    img {
+      @extend %v-align;
+    }
+  }
+}
+
+.wrapper {
+  padding-left: 0;
+
+  &.toggled {
+    padding: 0;
+
+    nav.slide-out {
+      transform: translate3d(250px, 0px, 0px);
+      transition: transform 1s ease;
+    }
+  }
+
+  nav {
+    &.slide-out {
+      background: $white;
+      border-right: 1px solid $black;
+      list-style: none;
+      height: 100vh;
+      left: 100%;
+      overflow: hidden;
+      padding: 0;
+      position: fixed;
+      transform: translate3d(-250px, 0px, 0px);
+      top: 0;
+      transition: transform .75s ease;
+      width: 250px;
+      z-index: 90;
+
+      @media #{$sm-breakpoint} #{$landscape} {
+        transform: translate3d(-300px, 0px, 0px);
+        width: 300px;
+      }
+
+      @media #{$sm-breakpoint} {
+        transform: translate3d(-450px, 0px, 0px);
+        width: 450px;
+      }
+
+      div {
+        overflow: hidden;
+        padding: $two-36th;
+        position: relative;
+        top: 64px;
+
+        @media only screen and (max-device-width : 768px) and (orientation: landscape) {
+          overflow-y: scroll;
+          overflow-x: hidden;
+        }
+      }
+    }
+  }
+}
+
+// Dark Overlay
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  bottom: 0;
+  opacity: 0;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 89;
+}
+
+

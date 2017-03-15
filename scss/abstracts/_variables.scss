@@ -1,0 +1,77 @@
+// -------------------------------------------------
+//    This file contains all application-wide variables.
+// -------------------------------------------------
+
+@import '../vendor/bootstrap/variables';
+
+/// Font declarations
+$font-stack: 'Helvetica', 'Arial', sans-serif;
+$font-regular: 'ProductSansRegular';
+$font-bold: 'ProductSansBold';
+
+
+/// -- Colors
+$white: #ffffff;
+$black: #000000;
+$transparent: rgba(0, 0, 0, 0);
+
+$primary-text: $black;
+
+
+/// Wrapper widths
+$wrapper-max-width: 2500px;
+$blade-max-width: 1280px;
+
+
+///  BREAKPOINT DECLARATIONS
+
+$screen-xs: 320px;
+$screen-sm: 550px;
+$screen-md: 768px;
+$screen-lg: 1024px;
+
+$xs-breakpoint:  'only screen and (min-width:' $screen-xs')'; /* min-width 320px */
+$sm-breakpoint:  'only screen and (min-width:' $screen-sm')'; /* min-width 550px */
+$md-breakpoint:  'only screen and (min-width:' $screen-md')'; /* min-width 768px */
+$lg-breakpoint:  'only screen and (min-width:' $screen-lg')'; /* min-width 1024px - infinity */
+
+$landscape: 'and (orientation: landscape)';
+$portrait: 'and (orientation: portrait)';
+
+// 36 col grid
+$one-36th: 2.77778%;
+$two-36th: 5.55556%;
+$three-36th: 8.33333%;
+$four-36th: 11.11111%;
+$five-36th: 13.88889%;
+$six-36th: 16.66667%;
+$seven-36th: 19.44444%;
+$eight-36th: 22.22222%;
+$nine-36th: 25%;
+$ten-36th: 27.77778%;
+$eleven-36th: 30.55556%;
+$twelve-36th: 33.33333%;
+$thirteen-36th: 36.11111%;
+$fourteen-36th: 38.88889%;
+$fifteen-36th: 41.66667%;
+$sixteen-36th: 44.44444%;
+$seventeen-36th: 47.22222%;
+$eighteen-36th: 50%;
+$nineteen-36th: 52.77778%;
+$twenty-36th: 55.55556%;
+$twenty-one-36th: 58.33333%;
+$twenty-two-36th: 61.11111%;
+$twenty-three-36th: 63.88889%;
+$twenty-four-36th: 66.66667%;
+$twenty-five-36th: 69.44444%;
+$twenty-six-36th: 72.22222%;
+$twenty-seven-36th: 75%;
+$twenty-eight-36th: 77.77778%;
+$twenty-nine-36th: 80.55556%;
+$thirty-36th: 83.33333%;
+$thirty-one-36th: 86.11111%;
+$thirty-two-36th: 88.88889%;
+$thirty-three-36th: 91.66667%;
+$thirty-four-36th: 94.44444%;
+$thirty-five-36th: 97.22222%;
+$thirty-six-36th: 100%;

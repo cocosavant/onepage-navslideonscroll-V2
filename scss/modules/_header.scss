@@ -1,0 +1,247 @@
+// -------------------------------------------------
+//    Header scss
+// -------------------------------------------------
+
+$cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
+$menuItems: 4;
+
+
+header {
+  background: $white;
+  -webkit-box-shadow: -1px 22px 84px -19px rgba(0,0,0,0.2);
+  -moz-box-shadow: -1px 22px 84px -19px rgba(0,0,0,0.2);
+  box-shadow: -1px 22px 84px -19px rgba(0,0,0,0.2);
+  height: 100px;
+  padding: 40px $two-36th;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.25s;
+  width: 100%;
+  z-index: 1000;
+
+  @media #{$lg-breakpoint} {
+  	text-align: left;
+  }
+
+  .menu-container {
+    cursor: pointer;
+		float: right;
+    font-size: 1.2rem;
+    height: 50px;
+		opacity: 1;
+    position: relative;
+    top: -21px;
+    user-select: none;
+		width: 50px;
+		z-index: 100;
+
+    @media #{$sm-breakpoint} {
+      font-size: 1.6rem;
+      top: -24px;
+    }
+  }
+
+  .title {
+  	color: $black;
+  	font-size: 1.8rem;
+ 		margin-top: -4px;
+
+    @media #{$sm-breakpoint} {
+      font-size: 2rem;
+    }
+
+    a {
+     color: $black;
+     opacity: 1;
+
+      &:hover,
+      &:active {
+        box-shadow: none;
+        color: $black;
+      }
+    }
+
+  	@media #{$md-breakpoint} {
+			font-size: 2rem;
+  	}
+
+  	@media #{$lg-breakpoint} {
+  		float: left;
+			font-size: 1.4rem;
+  	}
+  }
+
+  &.nav-up {
+  	height: 40px;
+    top: -100px;
+
+    .menu-container {
+   		//top: -100px;
+   		//transition: all 0.2s ease-in-out;
+
+      //transition-delay: 0.25s;
+    }
+
+	  div,
+	  ul {
+	  	position: relative;
+			//top: 20px;
+			transition: top 0.2s ease-in-out;
+
+			li {
+				color: $white;
+				opacity: .3;
+			}
+	  }
+	}
+
+	ul {
+		float: none;
+
+		@media #{$lg-breakpoint} {
+			float: right;
+		}
+
+		li {
+			display: block;
+			list-style-type: none;
+
+			@media #{$lg-breakpoint} {
+				display: inline;
+				padding-right: 20px;
+
+        &:last-child {
+          padding-right: 0;
+        }
+			}
+
+			a {
+				font-size: 1.2rem;
+				padding: 0 0 5px 0;
+
+				@media #{$md-breakpoint} {
+					font-size: 1.6rem;
+		  	}
+
+		  	@media #{$lg-breakpoint} {
+					font-size: 1.4rem;
+		  	}
+			}
+
+		  &:hover a,
+		  &:active a,
+		  &.active a {
+		    box-shadow: inset 0 -2px 0 0 $white;
+		    color: $white;
+		    opacity: 1;
+		  }
+		}
+	}
+
+  ul.menu {
+    cursor: pointer;
+    display: none;
+    position: relative;
+    padding: 0px 48px 0;
+    list-style: none;
+    transition: all 0.3s ease-in;
+
+
+    li.menu-item {
+      transform: scale(1.15) translateY(-30px);
+      opacity: 0;
+      transition: all 0.3s $cubic;
+
+      a {
+        position: relative;
+        color: #FFF;
+        font-weight: 100;
+        text-decoration: none;
+        font-size: 22px;
+        line-height: 2.35;
+        font-weight: 200;
+        width: 100%;
+      }
+    }
+  }
+
+	&.menu-opened {
+		height: 100%;
+    background-color: $white;
+    transition: all 0.3s ease-in;
+    //transition-delay: 0.25s;
+
+    .menu-container {
+    	opacity: .6;
+     	transition: all 0.3s ease-in;
+    }
+
+    ul.menu {
+      clear: both;
+      display: block;
+    	padding: 10px;
+	    text-align: center;
+	    overflow: scroll;
+	    max-height: 100%;
+      transition: top 0.2s ease-in-out;
+
+	    &::-webkit-scrollbar  {
+	      display: none;
+	    }
+
+	    h2 {
+        margin-bottom: 0px;
+        letter-spacing: 1px;
+	    }
+
+      li.menu-item {
+      	transition: all 0.3s ease-in;
+        transform: scale(1) translateY(0px);
+        opacity: 1;
+      	@for $i from 1 through $menuItems {
+          &:nth-child(#{$i}) {
+            transition-delay: #{0.07 * $i+0.2}s;
+          }
+        }
+      }
+    }
+	}
+}
+
+nav {
+  &.nav-up {
+    height: 40px;
+    top: -100px;
+
+    .menu-container {
+      top: -100px;
+      transition: top 0.2s ease-in-out;
+    }
+
+    div,
+    ul {
+      position: relative;
+      top: 20px;
+      transition: top 0.2s ease-in-out;
+
+      li {
+        color: $white;
+        opacity: .3;
+      }
+    }
+  }
+}
+
+@media(max-width: 1024px) {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  border-radius: 0px;
+  .header {
+      position: fixed;
+  }
+}
+
+
